@@ -8,6 +8,13 @@ const CartButton = props => {
 
   const toggleCartHandler = () => {
     dispatch(uiActions.toggleCart());
+    dispatch(
+      uiActions.showNotification({
+        status: 'error',
+        title: 'Error!',
+        message: 'Sending cart data failed!',
+      })
+    );
   };
 
   return (
